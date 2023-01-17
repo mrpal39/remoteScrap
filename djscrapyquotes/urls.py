@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from trade.views import *
 from jobs import views as jobsView
 from product import views as ProductView
 from django.conf import settings
@@ -24,6 +25,13 @@ urlpatterns = [
     path('', jobsView.get_by_tag, name='get_by_tag'),
     path('scrap/', jobsView.page_view, name='scrap'),
     path('product/', ProductView.get_product, name='get_product'),
+    path('email/', jobsView.get_emal, name='get_emal'),
+    path('trade/', get_trade_data, name='get_emal'),
+
+    # path('aws/', ProductView.get_product, name='get_product_name_modile'),
+    path('aws/', ProductView.get_product_name_modile, name='get_product_name_modile'),
+
+    
 
 ]
 urlpatterns += (

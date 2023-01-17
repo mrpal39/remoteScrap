@@ -1,0 +1,5 @@
+Referer: https://www.amazon.com/s?k=samsung+phone&ref=nb_sb_noss
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/2.6.3 (+https://scrapy.org)
+Accept-Encoding: gzip, deflate

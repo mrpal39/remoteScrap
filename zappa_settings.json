@@ -1,0 +1,17 @@
+{
+    "dev": {
+        "aws_region": "us-west-2",
+        "django_settings": "scraper.scraper.settings",
+        "profile_name": "default",
+        "project_name": "remotescrap",
+        "runtime": "python3.9",
+        "s3_bucket": "dpf-zappa",
+        "slim_handler": true,
+        "exclude": ["*.gz", "*.rar"],
+
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "delete_s3_zip": false
+    }
+}
+

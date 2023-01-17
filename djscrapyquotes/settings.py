@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'import_export',
 
+    'trade',
     # django app
     'quotes',
     "jobs",
@@ -80,17 +81,22 @@ WSGI_APPLICATION = 'djscrapyquotes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'remotejob',
+#         'USER': 'ubuntu',
+#         'PASSWORD': 'password@123',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'remotejob',
-        'USER': 'ubuntu',
-        'PASSWORD': 'password@123',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 
 # Password validation
@@ -126,8 +132,13 @@ USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
 
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+if DEBUG:
+   STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static'),
+   ]
+else:
+   STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

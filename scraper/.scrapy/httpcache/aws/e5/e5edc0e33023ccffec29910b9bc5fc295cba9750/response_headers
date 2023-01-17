@@ -1,0 +1,21 @@
+Content-Type: text/html;charset=UTF-8
+Server: Server
+Date: Mon, 16 Jan 2023 12:17:31 GMT
+X-Amz-Rid: FTVHW7ZGZZX992W85GTB
+Expires: -1
+Content-Encoding: gzip
+Content-Security-Policy: upgrade-insecure-requests;report-uri https://metrics.media-amazon.com/
+Content-Language: en-US
+Cache-Control: no-cache
+Accept-Ch: ect,rtt,downlink,device-memory,sec-ch-device-memory,viewport-width,sec-ch-viewport-width,dpr,sec-ch-dpr
+Accept-Ch-Lifetime: 86400
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1;
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Vary: Content-Type,X-Amazon-Wtm-Tag-SP-Search-Secured-Port-Enabled,Accept-Encoding,User-Agent
+X-Frame-Options: SAMEORIGIN
+X-Cache: Miss from cloudfront
+Via: 1.1 5be03d0f2c9efd18df3a07ad2305d5c4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: DEL54-C4
+X-Amz-Cf-Id: 9vf02rb_slIPnEQi9lfVCTLyLHGkUKs5fj1DT-aDaf_4n-EzUL-dAw==
