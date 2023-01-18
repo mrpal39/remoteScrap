@@ -1,2 +1,2 @@
 # remoteScrap
-sudo lsof -t -i tcp:6800 | xargs kill -9
+sudo lsof -t -i tcp:8000 | xargs kill -9
