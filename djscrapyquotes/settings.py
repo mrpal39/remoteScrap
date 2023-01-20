@@ -78,18 +78,14 @@ WSGI_APPLICATION = 'djscrapyquotes.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# https://docs.djangoproject.com/en/3.
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'remotejob',
-        'USER': 'ubuntu',
-        'PASSWORD': 'password@123',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 
