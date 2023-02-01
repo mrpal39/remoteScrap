@@ -1,0 +1,30 @@
+[16186:16186:0201/042220.093449:WARNING:chrome_main_delegate.cc(607)] This is Chrome version 109.0.5414.119 (not a warning)
+[16186:16186:0201/042220.386751:WARNING:account_consistency_mode_manager.cc(70)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[16221:16221:0201/042220.488630:WARNING:sandbox_linux.cc(385)] InitializeSandbox() called with multiple threads in process gpu-process.
+[16186:16186:0201/042220.745742:WARNING:bluez_dbus_manager.cc(247)] Floss manager not present, cannot set Floss enable/disable.
+[16223:16236:0201/042224.324650:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 9
+[16223:16236:0201/042224.324774:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 5
+[16223:16236:0201/042224.324800:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 11
+[16223:16236:0201/042224.324825:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 15
+[16223:16236:0201/042224.324852:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 19
+[16223:16236:0201/042224.324880:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 17
+[16223:16236:0201/042224.324909:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 23
+[16223:16236:0201/042224.324937:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 21
+[16223:16236:0201/042224.324964:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 25
+[16223:16236:0201/042224.324993:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 31
+[16223:16236:0201/042224.325020:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 27
+[16223:16236:0201/042224.325047:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 29
+[16223:16236:0201/042224.325076:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 35
+[16223:16236:0201/042224.325103:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 33
+[16223:16236:0201/042224.325130:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 39
+[16223:16236:0201/042224.325157:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 37
+[16223:16236:0201/042224.325185:WARNING:spdy_session.cc(3487)] Received HEADERS for invalid stream 41
+[16186:16186:0201/042227.790076:INFO:model_executor_impl.cc(195)] Segmentation model result: 1 for segment OPTIMIZATION_TARGET_SEGMENTATION_SEARCH_USER
+[16186:16186:0201/042227.794934:INFO:model_executor_impl.cc(195)] Segmentation model result: 0 for segment OPTIMIZATION_TARGET_SEGMENTATION_SHOPPING_USER
+[16186:16186:0201/042227.795246:INFO:model_executor_impl.cc(195)] Segmentation model result: 1 for segment CROSS_DEVICE_USER_SEGMENT
+[16186:16186:0201/042227.795376:INFO:model_executor_impl.cc(195)] Segmentation model result: 0 for segment RESUME_HEAVY_USER_SEGMENT
+[16186:16204:0201/042227.892321:ERROR:udev_watcher.cc(98)] Failed to begin udev enumeration.
+[16221:16221:0201/042235.213256:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[16221:16221:0201/042238.369145:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[16221:16221:0201/042238.383303:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+[16186:16186:0201/042247.897966:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.

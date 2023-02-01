@@ -24,12 +24,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobsView.get_by_tag, name='get_by_tag'),
     path('scrap/', jobsView.page_view, name='scrap'),
-    path('product/', ProductView.get_product, name='get_product'),
-    path('email/', jobsView.get_emal, name='get_emal'),
-    path('trade/', get_trade_data, name='get_emal'),
+    # path('product/', ProductView.get_product, name='get_product'),
+    # path('email/', jobsView.get_emal, name='get_emal'),
+    # path('trade/', get_trade_data, name='get_emal'),
 
     # path('aws/', ProductView.get_product, name='get_product_name_modile'),
-    path('aws/', ProductView.get_product_name_modile, name='get_product_name_modile'),
+    # path('aws/', ProductView.get_product_name_modile, name='get_product_name_modile'),
 
     
 

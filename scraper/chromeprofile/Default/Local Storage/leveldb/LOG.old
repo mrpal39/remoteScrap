@@ -1,0 +1,7 @@
+2023/02/01-04:16:00.972 5 Reusing MANIFEST /home/rahul/dev/remoteScrap/scraper/chromeprofile/Default/Local Storage/leveldb/MANIFEST-000001
+2023/02/01-04:16:00.973 5 Recovering log #27
+2023/02/01-04:16:00.974 5 Level-0 table #29: started
+2023/02/01-04:16:00.981 5 Level-0 table #29: 38215 bytes OK
+2023/02/01-04:16:00.982 5 Recovering log #28
+2023/02/01-04:16:00.986 5 Reusing old log /home/rahul/dev/remoteScrap/scraper/chromeprofile/Default/Local Storage/leveldb/000028.log 
+2023/02/01-04:16:01.005 5 Delete type=0 #27
