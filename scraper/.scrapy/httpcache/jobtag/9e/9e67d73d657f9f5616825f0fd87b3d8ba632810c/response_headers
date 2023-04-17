@@ -1,0 +1,17 @@
+Server: Cowboy
+Date: Thu, 16 Feb 2023 09:20:38 GMT
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: text/html; charset=utf-8
+Location: https://weworkremotely.com/
+Vary: Accept-Encoding, Origin
+Content-Encoding: gzip
+Cache-Control: no-cache
+X-Request-Id: 156d2ecf-037f-4c78-afa1-5f556a1d56a1
+X-Runtime: 0.011170
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur

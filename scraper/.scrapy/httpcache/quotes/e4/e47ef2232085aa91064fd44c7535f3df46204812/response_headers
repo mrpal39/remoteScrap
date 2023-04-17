@@ -1,0 +1,9 @@
+Server: Cowboy
+Date: Mon, 17 Apr 2023 10:15:35 GMT
+Content-Type: text/html; charset=utf-8
+X-Request-Id: e14cab6b-8197-4cc7-a825-bfc7df4a70fe
+X-Runtime: 0.005550
+Vary: Accept-Encoding, Origin
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur

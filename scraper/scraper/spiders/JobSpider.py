@@ -47,7 +47,18 @@ def isValidURL(str):
 class QuotesSpider(scrapy.Spider):
 
     start_urls = [
-        'https://weworkremotely.com/categories/remote-front-end-programming-jobs']
+        'https://weworkremotely.com/categories/remote-front-end-programming-jobs',
+        'https://weworkremotely.com/categories/remote-full-stack-programming-jobs'
+        'https://weworkremotely.com/categories/all-other-remote-jobs',
+        'https://weworkremotely.com/categories/remote-sales-and-marketing-jobs',
+        'https://weworkremotely.com/categories/remote-customer-support-jobs',
+        'https://weworkremotely.com/categories/remote-management-and-finance-jobs',
+        'https://weworkremotely.com/remote-contract-jobs',
+        'https://weworkremotely.com/categories/remote-devops-sysadmin-jobs',
+        'https://weworkremotely.com/categories/remote-management-and-finance-jobs',
+        'https://weworkremotely.com/categories/remote-product-jobs',
+        'https://weworkremotely.com/categories/remote-design-jobs',
+        ]
 
     name = "quotes"
 

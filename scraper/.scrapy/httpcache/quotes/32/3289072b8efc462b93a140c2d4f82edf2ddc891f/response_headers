@@ -1,0 +1,18 @@
+Server: Cowboy
+Date: Mon, 17 Apr 2023 10:16:53 GMT
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: text/html; charset=utf-8
+Vary: Accept-Encoding, Origin
+Content-Encoding: gzip
+Etag: W/"918a69ad66d1acb09a811701fd71d33a"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _jobs_session=OWgG0Ctr6UU7TNDlCqRuNOuQHpSLA28TL31zWkfCqDnT%2Bpbqa1Y4ryTFI68HvBt90SxXz6X2u9r8cHCKV5%2BMEB7NsOACQbI1%2ByKhGqbNHzImP0Cpf%2BjnuDxTFTfw7a4s0uWMUqqqZUkkIFo8YL%2Bp4NhmUMiwGpxptJU2pLH82MpXJweqRkjSBvSjnEH0X4ek1ouP95uPL1Bm%2F5JMyicmFPiF8RZ%2F%2FToiqHowY%2FbTczerhGZ4IPPTNR6KJouTQwe%2Fbh2NGSxDPdWOawIvVLnK7V2iduvU--SL9RFYy3H4Cggww4--35fcxIilqeyFVNJYMesReQ%3D%3D; path=/; secure; HttpOnly
+X-Request-Id: 33f3bd28-93e0-4d1b-a55c-586d84d402f3
+X-Runtime: 0.074675
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
