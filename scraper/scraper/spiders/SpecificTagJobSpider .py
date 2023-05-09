@@ -80,12 +80,15 @@ class SpecificAuthorQuotesSpider(scrapy.Spider):
     def parse_book(self, response):
         # print(response)
         item = JobItem()
+        item_tag = QuotesItem()
+
 
         #header work post
         JobData = response.css('div.listing-header-container')
         job_title = JobData.css('h1::text').extract()
         job_post_Data= JobData.css('time::text').extract()      
-
+        job_post_tags = JobData.css(
+            'a::attr(href)').extract()  # apply link grap
         companyLogo = response.css("div.listing-logo")        
         url = companyLogo.css('img').xpath('@src').extract()
         post_tag=response.css('span.listing-tag::text').extract()
@@ -109,7 +112,20 @@ class SpecificAuthorQuotesSpider(scrapy.Spider):
             companyUrl =''
 
             print("No")
-        
+        for t in job_post_tags:
+            x = re.findall("company",  t)
+
+        if (x):
+            print(x)
+
+            print("Yes, there is at least one match!")
+        else:
+            print(t)
+            item_tag['text']=t
+            yield item_tag
+
+            print("No match")
+
         # companyUrl = self.base_url + company_website[1]
         c = len(apply_url[0])
 

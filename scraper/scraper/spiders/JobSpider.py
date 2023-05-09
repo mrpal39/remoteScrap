@@ -1,6 +1,7 @@
 from urllib.parse import quote_plus
 import scrapy
 from ..items import JobItem, QuotesItem
+import re
 
 import urllib.parse
 from urllib.parse import urljoin, urlparse
@@ -46,19 +47,13 @@ def isValidURL(str):
 
 class QuotesSpider(scrapy.Spider):
 
-    start_urls = [
-        'https://weworkremotely.com/categories/remote-front-end-programming-jobs',
-        'https://weworkremotely.com/categories/remote-full-stack-programming-jobs'
-        'https://weworkremotely.com/categories/all-other-remote-jobs',
-        'https://weworkremotely.com/categories/remote-sales-and-marketing-jobs',
-        'https://weworkremotely.com/categories/remote-customer-support-jobs',
-        'https://weworkremotely.com/categories/remote-management-and-finance-jobs',
-        'https://weworkremotely.com/remote-contract-jobs',
-        'https://weworkremotely.com/categories/remote-devops-sysadmin-jobs',
-        'https://weworkremotely.com/categories/remote-management-and-finance-jobs',
-        'https://weworkremotely.com/categories/remote-product-jobs',
-        'https://weworkremotely.com/categories/remote-design-jobs',
-        ]
+    def __init__(self, author=None, **kwargs):
+        self.author = author
+        self.start_urls = [
+            f'https://weworkremotely.com{author}']
+
+        super().__init__(**kwargs)
+
 
     name = "quotes"
 
@@ -80,14 +75,13 @@ class QuotesSpider(scrapy.Spider):
             yield scrapy.Request(book_url, callback=self.parse_book)
 
     def parse_book(self, response):
-        # print(response)
         item = JobItem()
-
         #header work post
         JobData = response.css('div.listing-header-container')
         job_title = JobData.css('h1::text').extract()
         job_post_Data= JobData.css('time::text').extract()      
-
+        job_post_tags = JobData.css(
+            'a::attr(href)').extract()  # apply link grap
         companyLogo = response.css("div.listing-logo")        
         url = companyLogo.css('img').xpath('@src').extract()
         post_tag=response.css('span.listing-tag::text').extract()
@@ -106,11 +100,11 @@ class QuotesSpider(scrapy.Spider):
 
         if(isValidURL(companyDetail) == True):
             companyUrl = companyDetail
-            print("Yes")
         else:
             companyUrl =''
+       
 
-            print("No")
+             
         
         # companyUrl = self.base_url + company_website[1]
         c = len(apply_url[0])

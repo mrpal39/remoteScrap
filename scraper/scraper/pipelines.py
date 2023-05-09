@@ -17,23 +17,25 @@ coloredlogs.install(level="WARN", logger=logger)
 
 class ScraperPipeline:
 
-    def process_item(self, item, spider):
+    def process_item(self, item_tag, spider):
+        print(item_tag)
         try:
-            Quotes.objects.create(text=item['text'], author=item['author'])
-            print("\n")
-            logger.warn("Loaded quote {}".format(item['text']))
-            print(item)
+            Quotes.objects.create(text=item_tag['text'])
+            # print("\n")
+            logger.warn("Loaded quote {}".format(item_tag['text']))
+            # print(item_tag)
         except Exception as e:
-            print("\n")
+            # print("\n")
             logger.error(
                 "\nFailed to load quote, Reason For Failure:{}".format(e))
-            print(item)
-        return item
+            # print(item_tag)
+        return item_tag
 
 
 class ScraperJobPipeline:
 
     def process_item(self, item, spider):
+        # print(item)
         try:
             Jobs.objects.create(
              
@@ -62,12 +64,12 @@ class ScraperJobPipeline:
 
 
                 
-            print("\n")
+            # print("\n")
             logger.warn("Loaded quote {}".format(item['text']))
-            print(item)
+            # print(item)
         except Exception as e:
-            print("\n")
+            # print("\n")
             logger.error(
                 "\nFailed to load quote, Reason For Failure:{}".format(e))
-            print(item)
+            # print(item)
         return item

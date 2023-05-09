@@ -1,42 +1,53 @@
-
-{% extends "base.html" %}
-
-{% csrf_token %}
-
-{% block content %} <meta name="csrf_token" content="{{ csrf_token }}">
-
+{% extends "base.html" %} {% csrf_token %} {% block content %}
+<meta name="csrf_token" content="{{ csrf_token }}" />
 
 <div class="row justify-content-center align-items-center g-2">
   <div class="col-4">
-    <div class="card" style="background-color:orangered; border-color:darkblue;">
+    <div
+      class="card"
+      style="background-color: orangered; border-color: darkblue"
+    >
       <div class="card-body">
-        <form class="form-signin" role="search"     method="POST" action="{% url 'get_by_tag' %}">
+        <form
+          class="form-signin"
+          role="search"
+          method="POST"
+          action="{% url 'get_by_tag' %}"
+        >
           {% csrf_token %}
-          <input class="form-control me-2" type="search" name="search"  placeholder="Search" aria-label="Search">
+          <input
+            class="form-control me-2"
+            type="search"
+            name="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
           <button class="btn btn-outline-success" type="submit">submit</button>
-          
-          
-          </form> 
-    
+        </form>
       </div>
-    </div></div>
+    </div>
+  </div>
   <div class="col-6">
-    <div class="card" style="background-color:orangered; border-color:darkblue;">
+    <div
+      class="card"
+      style="background-color: orangered; border-color: darkblue"
+    >
       <div class="card-body">
-        <form class="form-signin" role="search"     method="POST" action="{% url 'scrap' %}">
+        <form
+          class="form-signin"
+          role="search"
+          method="POST"
+          action="{% url 'scrap' %}"
+        >
           {% csrf_token %}
           <button class="btn btn-outline-success" type="submit">Update</button>
-          
-          
-          </form> 
-    
+        </form>
+        <h1>Hello, {{ name }}!</h1>
+        <p>You are {{ age }} years old.</p>
       </div>
-    </div></div>
+    </div>
+  </div>
   <div class="col">Column</div>
 </div>
 
-
-
-
-
-{% endblock %} 
+{% endblock content%}
