@@ -21,14 +21,14 @@ class ScraperPipeline:
         print(item_tag)
         try:
             Quotes.objects.create(text=item_tag['text'])
-            # print("\n")
+            print("\n")
             logger.warn("Loaded quote {}".format(item_tag['text']))
-            # print(item_tag)
+            print(item_tag)
         except Exception as e:
-            # print("\n")
+            print("\n")
             logger.error(
                 "\nFailed to load quote, Reason For Failure:{}".format(e))
-            # print(item_tag)
+            print(item_tag)
         return item_tag
 
 
@@ -64,12 +64,12 @@ class ScraperJobPipeline:
 
 
                 
-            # print("\n")
+            print("\n")
             logger.warn("Loaded quote {}".format(item['text']))
-            # print(item)
+            print(item)
         except Exception as e:
-            # print("\n")
+            print("\n")
             logger.error(
                 "\nFailed to load quote, Reason For Failure:{}".format(e))
-            # print(item)
+            print(item)
         return item

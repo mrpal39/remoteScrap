@@ -76,6 +76,8 @@ class QuotesSpider(scrapy.Spider):
 
     def parse_book(self, response):
         item = JobItem()
+        item_tag= QuotesItem()
+
         #header work post
         JobData = response.css('div.listing-header-container')
         job_title = JobData.css('h1::text').extract()
@@ -102,7 +104,20 @@ class QuotesSpider(scrapy.Spider):
             companyUrl = companyDetail
         else:
             companyUrl =''
-       
+        for t in job_post_tags:
+            x = re.findall("company",  t)
+
+            if (x):
+                print(x)
+
+                print("Yes, there is at least one match!")
+            else:
+                print(t)
+                item_tag['text']=t
+                yield item_tag
+
+                print("No match")
+
 
              
         

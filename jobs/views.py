@@ -7,7 +7,6 @@ from .models import Jobs
 from quotes.models import Quotes
 def page_view(request):
     ra = Quotes.objects.all()
-    print(ra)
 
     if request.method == 'POST':
         # c = RequestContext(request.POST, {
