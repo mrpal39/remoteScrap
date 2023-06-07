@@ -9,13 +9,15 @@ def page_view(request):
     ra = Quotes.objects.all()
 
     if request.method == 'POST':
-        # c = RequestContext(request.POST, {
         for a in ra:
-                
-    
+             
+        # a = 'categories/remote-devops-sysadmin-jobs'
+
             response = call_command('scrape_all_job', a)
 
-            print(response)
+        # print(response)
+            pass
+
          
        
     return render(request, 'homepage.html')

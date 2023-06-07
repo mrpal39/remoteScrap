@@ -50,7 +50,7 @@ class QuotesSpider(scrapy.Spider):
     def __init__(self, author=None, **kwargs):
         self.author = author
         self.start_urls = [
-            f'https://weworkremotely.com{author}']
+            f'https://weworkremotely.com/{author}']
 
         super().__init__(**kwargs)
 
@@ -64,24 +64,40 @@ class QuotesSpider(scrapy.Spider):
     def parse(self, response, **kwargs):
         item = JobItem()
         import json
+        # print(response.url)
 
         all_div_quotes = response.css('section.jobs')
-        for quote in all_div_quotes.css('li.feature'):
+        for quote in all_div_quotes.css('li'):
             json_object = quote.extract()
             url = quote.css('a::attr(href)').extract()
-            urlJob = url[1]
+            title_job = quote.css('span.title::text').extract()
+            title_job_new = quote.css('span::text').extract()
+            if len(url)==2:
+                    
+                urlJob = url[1]
+                print(url[1], len(url))
 
-            book_url = self.base_url + urlJob
-            yield scrapy.Request(book_url, callback=self.parse_book)
+                book_url = self.base_url + urlJob
+                print(book_url)
+                yield scrapy.Request(book_url, callback=self.parse_book)
 
     def parse_book(self, response):
+        print('#########################################################################response.url')
+
+        # print(response.url)
+        # print('#########################################################################response.url')
+
+
         item = JobItem()
         item_tag= QuotesItem()
 
         #header work post
         JobData = response.css('div.listing-header-container')
         job_title = JobData.css('h1::text').extract()
-        job_post_Data= JobData.css('time::text').extract()      
+
+        job_post_filter = JobData.css('time::text').extract()
+
+        job_post_Data = JobData.css('time::attr(datetime)').extract()
         job_post_tags = JobData.css(
             'a::attr(href)').extract()  # apply link grap
         companyLogo = response.css("div.listing-logo")        
@@ -108,23 +124,24 @@ class QuotesSpider(scrapy.Spider):
             x = re.findall("company",  t)
 
             if (x):
-                print(x)
-
+                # print(x)
+# 
                 print("Yes, there is at least one match!")
             else:
-                print(t)
+                # print(t)
                 item_tag['text']=t
                 yield item_tag
 
-                print("No match")
+                # print("No match")
 
 
              
         
-        # companyUrl = self.base_url + company_website[1]
+        companyUrl = self.base_url + company_website[1]
         c = len(apply_url[0])
 
         l_apply_url = 'a:1:{s:3:"url";s:' + str(c) + ':"' + apply_url[0] + '";}'
+        item['job_created_at'] = job_post_Data[0]
 
 
         item['job_title'] = job_title[0]

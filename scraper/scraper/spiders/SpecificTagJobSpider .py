@@ -64,18 +64,17 @@ class SpecificAuthorQuotesSpider(scrapy.Spider):
         import json
 
         all_div_quotes = response.css('section.jobs')
-        for quote in all_div_quotes.css('li.feature'):
+        for quote in all_div_quotes.css('li'):
             json_object = quote.extract()
-            # print(json.dumps(json_object, indent=3))
             url = quote.css('a::attr(href)').extract()
-            # print(f"/company/audienceplus'{url[0]}")
-            # print(f"remote-jobs,{url[1]}")
-            urlJob = url[1]
+            if len(url) == 2:
 
-            book_url = self.base_url + urlJob
-            spaceUrl = book_url.replace(" ", "")
+                urlJob = url[1]
 
-            yield scrapy.Request(spaceUrl, callback=self.parse_book)
+                book_url = self.base_url + urlJob
+                spaceUrl = book_url.replace(" ", "")
+
+                yield scrapy.Request(spaceUrl, callback=self.parse_book)
 
     def parse_book(self, response):
         # print(response)
@@ -86,7 +85,9 @@ class SpecificAuthorQuotesSpider(scrapy.Spider):
         #header work post
         JobData = response.css('div.listing-header-container')
         job_title = JobData.css('h1::text').extract()
-        job_post_Data= JobData.css('time::text').extract()      
+        job_post_Data = JobData.css('time::attr(datetime)').extract()
+        job_post_filter = JobData.css('time::text').extract()
+
         job_post_tags = JobData.css(
             'a::attr(href)').extract()  # apply link grap
         companyLogo = response.css("div.listing-logo")        
@@ -132,7 +133,10 @@ class SpecificAuthorQuotesSpider(scrapy.Spider):
         l_apply_url = 'a:1:{s:3:"url";s:' + str(c) + ':"' + apply_url[0] + '";}'
 
 
+
         item['job_title'] = job_title[0]
+        item['job_created_at'] = job_post_Data[0]
+
         item['job_description'] = content[0]
         item['company_logo'] = Logo_url
         item['company_website'] = companyUrl

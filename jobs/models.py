@@ -11,7 +11,7 @@ from django.dispatch import receiver
 
 
 def in_three_days():
-    return timezone.now() + timedelta(days=28)
+    return timezone.now() + timedelta(days=90)
 
 
 class company(models.Model):
@@ -48,7 +48,7 @@ class Jobs(models.Model):
     company = models.ForeignKey(company, verbose_name=(
         "company"), on_delete=models.DO_NOTHING, blank=True, null=True)
 
-    job_title = models.CharField(max_length=50, blank=True, null=True)
+    job_title = models.CharField(max_length=100, blank=True, null=True)
     
 
     is_approved = models.BooleanField(default=True)
@@ -63,7 +63,7 @@ class Jobs(models.Model):
     category = models.CharField(max_length=50, blank=True, null=True)
     type = models.CharField(max_length=50, blank=True, null=True)
     payment_method = models.CharField(max_length=50, blank=True, null=True)
-    job_created_at = models.DateField(default=timezone.now)
+    job_created_at = models.DateTimeField(blank=True, null=True)
     job_expires_at = models.DateField(default=in_three_days)
     company_website = models.URLField()
     job_description = models.TextField(unique=True)

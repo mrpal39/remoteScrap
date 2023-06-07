@@ -163,7 +163,7 @@ class JobsResource(resources.ModelResource):
 
 class BookAdmin(ImportExportModelAdmin):
     resource_class = JobsResource
-    list_display = ('company_name', 'category','job_title',)
+    list_display = ('company_name', 'category', 'job_title', 'job_created_at')
     list_filter = ('category','job_created_at')
 
 admin.site.register(Jobs, BookAdmin)

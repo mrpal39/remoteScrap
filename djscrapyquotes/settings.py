@@ -142,3 +142,8 @@ else:
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+DATETIME_FORMAT = "%m-%d"
+L10N=False
+USE_TZ = True
