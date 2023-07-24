@@ -31,6 +31,10 @@ urlpatterns = [
     # path('aws/', ProductView.get_product, name='get_product_name_modile'),
     # path('aws/', ProductView.get_product_name_modile, name='get_product_name_modile'),
 
+    path('remoteco/', jobsView.remoteCoGetData, name='remoteCoGetData'),
+
+
+    
     
 
 ]

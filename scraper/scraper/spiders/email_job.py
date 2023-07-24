@@ -13,50 +13,50 @@ import time
 import os
 import requests
 import csv
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import StaleElementReferenceException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.common import exceptions
-from urllib.parse import urlparse
-import re
-from selenium.webdriver.chrome.service import Service as ChromiumService
-from selenium.webdriver.chrome.service import Service
-from selenium import webdriver
+# from selenium import webdriver
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.common.keys import Keys
+# from selenium.common.exceptions import NoSuchElementException
+# from selenium.common.exceptions import StaleElementReferenceException
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.support import expected_conditions
+# from selenium.common import exceptions
+# from urllib.parse import urlparse
+# import re
+# from selenium.webdriver.chrome.service import Service as ChromiumService
+# from selenium.webdriver.chrome.service import Service
+# from selenium import webdriver
 
 
-os.environ['PATH'] += r"/home/rahul/dev"
+# os.environ['PATH'] += r"/home/rahul/dev"
 
-service = Service(executable_path='/snap/bin/chromium.chromedriver')
-driver = webdriver.Chrome(service=service)
-# Function to validate URL
-# using regular expression
-def isValidURL(str):
+# service = Service(executable_path='/snap/bin/chromium.chromedriver')
+# driver = webdriver.Chrome(service=service)
+# # Function to validate URL
+# # using regular expression
+# def isValidURL(str):
 
-	# Regex to check valid URL
-	regex = ("((http|https)://)(www.)?" +
-			"[a-zA-Z0-9@:%._\\+~#?&//=]" +
-			"{2,256}\\.[a-z]" +
-			"{2,6}\\b([-a-zA-Z0-9@:%" +
-			"._\\+~#?&//=]*)")
+# 	# Regex to check valid URL
+# 	regex = ("((http|https)://)(www.)?" +
+# 			"[a-zA-Z0-9@:%._\\+~#?&//=]" +
+# 			"{2,256}\\.[a-z]" +
+# 			"{2,6}\\b([-a-zA-Z0-9@:%" +
+# 			"._\\+~#?&//=]*)")
 	
-	# Compile the ReGex
-	p = re.compile(regex)
+# 	# Compile the ReGex
+# 	p = re.compile(regex)
 
-	# If the string is empty
-	# return false
-	if (str == None):
-		return False
+# 	# If the string is empty
+# 	# return false
+# 	if (str == None):
+# 		return False
 
-	# Return if the string
-	# matched the ReGex
-	if(re.search(p, str)):
-		return True
-	else:
-		return False
+# 	# Return if the string
+# 	# matched the ReGex
+# 	if(re.search(p, str)):
+# 		return True
+# 	else:
+# 		return False
 
     # Driver code
 
@@ -96,19 +96,19 @@ class QuotesSpider(scrapy.Spider):
         # item = JobItem()
 
         # #header work post
-        driver.get(response.url)
-        driver.implicitly_wait(20)
-        job_search_botton = driver.find_elements(by=By.ID, value=("applynowbutton"))
-        job_search_botton[-1].click()
-        driver.implicitly_wait(70)
+        # driver.get(response.url)
+        # driver.implicitly_wait(20)
+        # job_search_botton = driver.find_elements(by=By.ID, value=("applynowbutton"))
+        # job_search_botton[-1].click()
+        # driver.implicitly_wait(70)
 
-        JobData = response.css('.howtoapply')
-        jh1=response.css('h3::text').extract()
+        # JobData = response.css('.howtoapply')
+        # jh1=response.css('h3::text').extract()
 
 
         # job_title = JobData.css('.howtoapply')
         # apply_url = job_title.css('a::attr(href)').extract()#apply link grap
-        print(jh1)
+        # print(jh1)
         # job_post_Data= JobData.css('time::text').extract()      
 
         # companyLogo = response.css("div.listing-logo")        

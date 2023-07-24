@@ -23,6 +23,18 @@ def page_view(request):
     return render(request, 'homepage.html')
 
 
+def remoteCoGetData(request):
+    # ra = Quotes.objects.all()
+    category = ['/remote-jobs/', '/remote-jobs/accounting/', '/remote-jobs/customer-service/', '/remote-jobs/online-data-entry/', '/remote-jobs/design/', '/remote-jobs/developer/', '/remote-jobs/online-editing/', '/remote-jobs/healthcare/', '/remote-jobs/recruiter/', '/remote-jobs/it/', '/remote-jobs/legal/', '/remote-jobs/marketing/', '/remote-jobs/project-manager/',
+              '/remote-jobs/qa/', '/remote-jobs/sales/', '/remote-jobs/online-teaching/', '/remote-jobs/virtual-assistant/', '/remote-jobs/writing/', '/remote-jobs/other/', '/full-time-remote-jobs/', '/part-time-remote-jobs/', '/online-freelance-jobs/', '/entry-level-remote-jobs/', '/high-paying-remote-jobs/', '/international-remote-jobs/']
+
+    for a  in category:
+        response = call_command('remoteCO', a)
+
+    return render(request, 'homepage.html')
+
+
+
 
 
 def get_by_tag(request):
